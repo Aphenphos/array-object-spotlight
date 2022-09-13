@@ -3,14 +3,18 @@
 // OUTPUT: the value of the 'name' attribute i.e. Benny
 // REQS: use destructuring and the function should be a single line
 
-export const getName = () => {}
+export const getName = ({ name }) => {
+  return name
+}
 
 // INPUT: an object with a nested "address" attribute such as
 //   {name: 'Bob Smith', address: {street: 'Main Street', number: 123, city: 'Anytown', country: 'USA}}
 // OUTPUT: the string 'Bob Smith lives at 123 Main Street, Anytown, USA'
 // REQS: use destructuring and template literals
 
-export const printAddress = () => {}
+export const printAddress = ({ name, address: { number, street, city, country} }) => {
+  return `${name} lives at ${number} ${street}, ${city}, ${country}`
+}
 
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
