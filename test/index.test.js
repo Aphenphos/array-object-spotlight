@@ -67,7 +67,7 @@ test('addSneakerCount should append the sneaker count to the object', () => {
   expect(addSneakerCount(nike)).not.toBe(nike)
 })
 
-test.skip('getBrandNames should return an array of the names of the sneaker brands', () => {
+test('getBrandNames should return an array of the names of the sneaker brands', () => {
   expect(getBrandNames(brands)).toStrictEqual(['Nike', 'Puma', 'Adidas'])
 })
 
