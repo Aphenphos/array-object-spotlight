@@ -22,12 +22,11 @@ export const printAddress = ({ name, address: { number, street, city, country} }
 export const printUserInfo = ({ 
     username, 
     name: { first, last },
-    info:
-    { favorites: { food, color },
+    info: { favorites: 
+            { food, color },
     pet: { type, name },
     address: { street, number, city, country }}
-    },
-     ) => {
+    },) => {
   return `
     Username: ${username},
     Full Name: ${first} ${last},
@@ -43,7 +42,15 @@ export const printUserInfo = ({
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = () => {}
+export const getSum = (...inputs) => {
+  let sum = 0;
+  console.log(inputs);
+  const length = inputs.length;
+  for (let i = 0; i < length; i++) {
+    sum += inputs[i];
+  }
+  return sum;
+}
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
