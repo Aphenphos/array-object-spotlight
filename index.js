@@ -19,14 +19,22 @@ export const printAddress = ({ name, address: { number, street, city, country} }
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
 // as part of the funciton definitions (i.e. there should be no dots in the template literals)
-export const printUserInfo = (user) => {
+export const printUserInfo = ({ 
+    username, 
+    name: { first, last },
+    info:
+    { favorites: { food, color },
+    pet: { type, name },
+    address: { street, number, city, country }}
+    },
+     ) => {
   return `
-    Username: ${user.username},
-    Full Name: ${user.name.first} ${user.name.last},
-    Favorite Color: ${user.info.favorites.color},
-    Favorite Food: ${user.info.favorites.food},
-    Pet Name: ${user.info.pet.name},
-    Address: ${user.info.address.number} ${user.info.address.street}, ${user.info.address.city}, ${user.info.address.country}
+    Username: ${username},
+    Full Name: ${first} ${last},
+    Favorite Color: ${color},
+    Favorite Food: ${food},
+    Pet Name: ${name},
+    Address: ${number} ${street}, ${city}, ${country}
     `
 }
 
