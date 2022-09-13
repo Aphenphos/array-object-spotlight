@@ -98,7 +98,10 @@ export const getBrandNames = (brands) => {
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
-export const totalSneakerCount = () => {}
+export const totalSneakerCount = ({Nike, Puma, Adidas}) => {
+  const sum = Nike.shoes.length + Puma.shoes.length + Adidas.shoes.length
+  return sum
+}
 
 // INPUT: An object
 // OUTPUT: An array with key value pairs converted to arrays
