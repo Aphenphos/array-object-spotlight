@@ -110,6 +110,11 @@ export const totalSneakerCount = ({Nike, Puma, Adidas}) => {
 // convertToArray({}) => []
 // Source: https://edabit.com/challenge/pPNAs5PvB3WvnDwDM
 
-export const convertToArray = () => {}
+export const convertToArray = (input) => { 
+    let newArray = [];
+    for (let key of Object.keys(input)) {
+      newArray.push([key, input[key]]);
+    }
+    return newArray;
+};
 
-//
